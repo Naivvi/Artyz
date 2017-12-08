@@ -1,0 +1,817 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+@each $font-face in 'TheSecret', 'archia-regular-webfont', 'Soapstone'{
+    @font-face {
+          font-family: $font-face; font-style: normal; font-weight: normal;
+          src: url('../fonts/#{$font-face}.eot');
+          src: url('../fonts/#{$font-face}.eot?') format('eot'),
+               url('../fonts/#{$font-face}.woff') format('woff'),
+               url('../fonts/#{$font-face}.ttf')  format('truetype');
+    }
+}
+
+$font-header: 'archia-regular-webfont';
+$font-body: 'Soapstone';
+
+.header {
+  height: 2.2em;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  background-color: #ffffffe6;
+}
+
+.menu {
+
+	line-height: 1;
+
+  &__list {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float:right;
+  }
+
+  &__item {
+	display: block;
+
+  }
+
+  &__link {
+	font-size: 1.05em;
+	font-weight: bold;
+	display: block;
+	padding: 1em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: $font-header;
+    text-decoration: none;
+    outline: 0;
+    font-size: 0.8em;
+
+  &:before {
+  	content: '';
+  	position: absolute;
+  	bottom: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 4px;
+  	background: #d94f5c;
+  	-webkit-transform: scale3d(0, 1, 1);
+  	transform: scale3d(0, 1, 1);
+  	-webkit-transition: -webkit-transform 0.1s;
+  	transition: transform 0.1s;
+  }
+}
+
+   &__link {
+  	position: relative;
+  	display: block;
+  	margin: 0 1.5em;
+  	padding: 0.75em 0;
+  	text-align: center;
+  	color: #505050;
+  	-webkit-transition: color 0.3s;
+  	transition: color 0.3s;
+    list-style: none;
+
+    &:hover {
+      	color: #929292;
+    }
+
+    &:focus {
+      	color: #929292;
+    }
+  }
+}
+
+
+
+.menu .menu__item--current .menu__link {
+	color: #d94f5c;
+}
+
+.menu .menu__item--current .menu__link::before {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.1s;
+}
+
+
+
+.hero {
+width: 100%;
+height: 60vh;
+background-image:url(../img/test.jpg);
+background-repeat: no-repeat;
+background-size: contain;
+position: relative;
+background-position: 50%;
+
+    &__header {
+      position: absolute;
+      bottom: 15%;
+      left: 10%;
+      font-size: 4em;
+      color: #e1e1e1;
+
+    }
+}
+
+
+.intro {
+  height: 50vh;
+  position: relative;
+  padding-top: 5em;
+;
+
+
+  &__header {
+    margin: auto;
+    left: 1.3em;
+    font-size: 2em;
+    font-family: $font-header;
+    width: 100%;
+text-align: center;
+  }
+
+  &__text {
+    margin: auto;
+    font-size: 1.2em;
+    padding: 1.5em;
+    font-family: $font-body;
+    width: 14em;
+  }
+
+}
+
+.main {
+  height: 100%;
+  background-color: #fff;
+
+    &__header {
+      text-align: center;
+      font-size: 2.5em;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      font-family: $font-header;
+    }
+
+    &__break {
+      height: 20em;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+              background-image: url(../img/break.jpg);
+    }
+
+    &__circle {
+              background-image: url(../img/image.png);
+                  height: 14em;
+                  width: 14em;
+                  margin: auto;
+                  background-size: cover;
+                  margin-bottom: 2em;
+
+                }
+
+    &__grid {
+      display: grid;
+      grid-template-rows: 1fr 24em 100%;
+  grid-template-columns: 100vw;
+  grid-gap: 2em;
+      width: 100%;
+      margin: auto;
+      padding-bottom: 2em;
+    }
+
+    &__image {
+      justify-self: center;
+      width: 20em;
+      height: 20em;
+
+
+      background-size: cover;
+
+      &--one {
+        background-image: url(../img/Winnie.jpg);
+        height: 35em;
+      }
+
+      &--two {
+        background-image: url(../img/AztecWarrior.png);
+        height: 24em;
+  width: 20em;
+      }
+
+      &--three {
+              background-image: url(../img/tracer.png);
+
+            }
+
+
+    }
+}
+
+.break {
+  height: 20em;
+  width: 100%;
+  background-size: cover;
+  background-image: url(../img/break2.jpg);
+  background-repeat: no-repeat;
+}
+
+.animation {
+  height: 100%;
+
+  &__header {
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-family: $font-header;
+  }
+
+  &__anim {
+      height: 100%;
+      width:100%;
+      display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 12em 12em;
+grid-gap: 2em;
+padding-bottom: 3em;
+      }
+
+      &__vid {
+        width: 20em;
+      margin: 1em;
+      justify-self: center;
+
+      }
+
+
+
+}
+
+.footer {
+  height: 6em;
+  width: 100%;
+  background-color: #202020;
+
+  &__title {
+      width: 62%;
+      margin: auto;
+      padding-top: 1.5em;
+    color: #fff;
+  }
+}
+
+.smallhero {
+  height: 20em;
+  width: 100%;
+  background-image: url(../img/smallhero.jpg);
+  background-size: cover;
+}
+
+
+
+.contacthero {
+height: 23em;
+width: 100%;
+background-image: url(../img/contact.jpg);
+background-size: cover;
+}
+
+.contact {
+
+  &__header {
+    padding: 1.5em;
+    font-family: $font-body;
+    width: 70%;
+  margin: auto;
+  text-align: left;
+
+  }
+
+  &__formbox {
+    width: 70%;
+  margin: auto;
+  padding-bottom: 2em;
+   font-family: $font-header;
+  }
+}
+
+.wpforms-submit {
+    background-color: #202020 !important;
+      color: #fff !important;
+}
+
+.blog {
+  width: 55%;
+  margin: auto;
+  padding: 3em;
+  margin-bottom: 3em;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  box-shadow: 0 2px 0 0 rgba(5,45,73,0.06999999999999995);
+  background-color: #FFFFFF;
+  overflow: hidden;
+  font-family: $font-header;
+
+    &__date {
+      text-align: left;
+      font-size: 0.8em;
+      font-weight: lighter;
+      padding-bottom: 1em;
+    }
+
+    &__header {
+      font-size: 0.9em;
+
+    }
+
+    &__titles {
+
+    }
+
+    &__maintitle {
+      margin: auto;
+      text-align: center;
+      font-family: $font-body;
+      padding-bottom: 1em;
+    }
+}
+
+
+.blog-container {
+background-color: #F3F4F5;
+padding-top: 2em;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width: 60em) {
+
+  img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .header {
+    height: 3em;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    background-color: #ffffffe6;
+  }
+
+    .intro {
+      height: 30vh;
+      position: relative;
+      padding-top: 3em;
+
+    &__text {
+      width: 31em;
+    }
+      &__header {
+
+        margin: auto;
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        font-family: $font-header;
+
+        &:after {
+          content: "";
+      position: absolute;
+      top: 50%;
+      width: 15em;
+      border-bottom: 2px solid #000;
+      left: 50%;
+      transform: translateX(-50%);
+      }
+    }
+  }
+
+
+  .main {
+    height: 100%;
+    background-color: #fff;
+
+      &__header {
+        text-align: center;
+        font-size: 4em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        font-family: $font-header;
+      }
+
+      &__break {
+        height: 30em;
+        width: 100%;
+        background-size: cover;
+                background-image: url(../img/break.jpg);
+      }
+
+      &__circle {
+                background-image: url(../img/image.png);
+                    height: 28em;
+                    width: 28em;
+                    margin: auto;
+                    background-size: cover;
+                    margin-bottom: 5em;
+
+                  }
+
+      &__grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5em;
+        width: 90%;
+        margin: auto;
+      }
+
+      &__image {
+        justify-self: center;
+        width: 20em;
+        height: 20em;
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+        background-size: cover;
+
+        &--one {
+          background-image: url(../img/Winnie.jpg);
+          height: 35em;
+        }
+
+        &--two {
+          background-image: url(../img/AztecWarrior.png);
+          height: 35em;
+          width: 29em;
+        }
+
+        &--three {
+                background-image: url(../img/tracer.png);
+                height: 25em;
+                width: 25em;
+                grid-column-start: span 2;
+              }
+
+
+      }
+  }
+
+  .animation {
+
+    &__vid {
+      width: 32em;
+
+    }
+
+    &__anim {
+      grid-template-rows: 20em 20em;
+    }
+
+  }
+
+
+  .menu {
+  	line-height: 1;
+
+
+    &__item {
+  	display: block;
+  	margin: 0em 0;
+    }
+
+}
+
+}
+
+@media only screen and (min-width: 80em) {
+
+
+  .blog {
+    width: 30em;
+    margin: auto;
+    padding: 3em;
+    margin-bottom: 3em;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    box-shadow: 0 2px 0 0 rgba(5,45,73,0.06999999999999995);
+    background-color: #FFFFFF;
+    overflow: hidden;
+
+      &__date {
+        text-align: right;
+        font-size: 1em;
+      }
+
+      &__header {
+          flex: 1 0 50%;
+      }
+
+      &__titles {
+        display: flex;
+      }
+
+  }
+
+
+
+  .intro {
+    height: 24vh;
+    position: relative;
+    padding-top: 3em;
+
+  &__text {
+    width: 31em;
+  }
+    &__header {
+
+      margin: auto;
+      width: 100%;
+      text-align: center;
+      font-size: 3em;
+      font-family: $font-header;
+
+      &:after {
+        content: "";
+    position: absolute;
+    top: 2.45em;
+    width: 15em;
+    border-bottom: 2px solid #000;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+  }
+}
+
+
+.main {
+  height: 100%;
+  background-color: #fff;
+
+    &__header {
+      text-align: center;
+      font-size: 4em;
+      padding-top: 2em;
+      padding-bottom: 2em;
+      font-family: $font-header;
+    }
+
+    &__break {
+      height: 30em;
+      width: 100%;
+      background-size: cover;
+              background-image: url(../img/break.jpg);
+    }
+
+    &__circle {
+              background-image: url(../img/image.png);
+                  height: 28em;
+                  width: 28em;
+                  margin: auto;
+                  background-size: cover;
+                  margin-bottom: 5em;
+
+                }
+
+    &__grid {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 5em;
+      width: 60%;
+      margin: auto;
+    }
+
+    &__image {
+      justify-self: center;
+      width: 20em;
+      height: 20em;
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+      background-size: cover;
+
+      &--one {
+        background-image: url(../img/Winnie.jpg);
+        height: 35em;
+      }
+
+      &--two {
+        background-image: url(../img/AztecWarrior.png);
+        height: 35em;
+        width: 29em;
+      }
+
+      &--three {
+              background-image: url(../img/tracer.png);
+              height: 25em;
+              width: 25em;
+              grid-column-start: span 2;
+            }
+
+
+    }
+}
+
+.animation {
+  height: 100vh;
+
+  &__header {
+    text-align: center;
+    font-size: 4em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-family: $font-header;
+  }
+
+  &__anim {
+      height: 35em;
+      width: 78%;
+      margin:auto;
+      display: flex;
+      }
+
+      &__vid {
+        width: 40em;
+      height: 22.5em;
+      margin: 3em;
+      flex: 0 0 40%;
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+      }
+}
+
+.break {
+  height: 30em;
+  width: 100%;
+  background-size: cover;
+  background-image: url(../img/break2.jpg);
+}
+
+
+.header {
+  height: 5em;
+  width: 24em;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 20em 20em;
+  background-color: #fff;
+
+
+}
+
+
+.menu {
+	line-height: 1;
+
+  &__list {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float:right;
+  }
+
+  &__item {
+	display: block;
+	margin: 1em 0;
+  }
+
+  &__link {
+	font-size: 1.05em;
+	font-weight: bold;
+	display: block;
+	padding: 1em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: $font-header;
+text-decoration: none;
+outline: 0;
+
+  &:before {
+  	content: '';
+  	position: absolute;
+  	bottom: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 4px;
+  	background: #d94f5c;
+  	-webkit-transform: scale3d(0, 1, 1);
+  	transform: scale3d(0, 1, 1);
+  	-webkit-transition: -webkit-transform 0.1s;
+  	transition: transform 0.1s;
+  }
+  }
+
+   &__link {
+  	position: relative;
+  	display: block;
+  	margin: 0 1.5em;
+  	padding: 0.75em 0;
+  	text-align: center;
+  	color: #505050;
+  	-webkit-transition: color 0.3s;
+  	transition: color 0.3s;
+    list-style: none;
+
+    &:hover {
+      	color: #929292;
+    }
+
+    &:focus {
+      	color: #929292;
+    }
+  }
+}
+
+
+
+.menu .menu__item--current .menu__link {
+	color: #d94f5c;
+}
+
+.menu .menu__item--current .menu__link::before {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.1s;
+}
+
+
+.contact {
+
+  &__header {
+    padding: 1.5em;
+    font-family: $font-header;
+    width: 40%;
+  margin: auto;
+  text-align: left;
+
+  }
+
+  &__formbox {
+    width: 40%;
+  margin: auto;
+  padding-bottom: 2em;
+
+  }
+}
+
+.contacthero {
+  background-position-y: -25em;
+}
+
+
+}
